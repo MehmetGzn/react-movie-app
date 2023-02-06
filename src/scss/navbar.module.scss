@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-
+  height: 8.5vh;
   .logo-div {
     background-color: $dark-yellow;
     width: 190px;
@@ -18,17 +18,28 @@
     .logo-part1 {
       position: absolute;
       top: 15px;
-      left: 10px;
+      left: 8px;
       font-family: 'Luckiest Guy', cursive;
       font-size: 45px;
+      color: $black;
+      transition: 0.3s ease-in;
     }
     .logo-part2 {
       position: absolute;
-      color: white;
+      color: $white;
       top: 15px;
-      right: 10px;
+      right: 8px;
       font-family: 'Luckiest Guy', cursive;
       font-size: 45px;
+      transition: 0.3s ease-in;
+    }
+    &:hover {
+      .logo-part1 {
+        color: $white;
+      }
+      .logo-part2 {
+        color: $black;
+      }
     }
   }
   .button-div {
@@ -43,6 +54,7 @@
       width: 100px;
       font-size: 20px;
       color: white;
+      cursor: pointer;
       background: $dark-gray;
       transition: 0.3s ease-in;
       &:hover {

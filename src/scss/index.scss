@@ -1,5 +1,6 @@
-@import './reset', './variables', './navbar.module.scss';
+@import './reset', './variables', './navbar.module.scss', './form.module.scss';
 
 * {
   font-family: 'Dosis', sans-serif;
+  letter-spacing: 0.5px;
 }

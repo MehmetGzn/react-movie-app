@@ -1,0 +1,88 @@
+.form-background-layer1 {
+  background-image: url(../Assets/formBackground.jpg);
+
+  background-position: cover;
+  background-size: 100vw;
+  background-color: $gray;
+  height: 91.5vh;
+  position: relative;
+  .form-background-layer2 {
+    position: relative;
+    width: 100vw;
+    background-color: rgba($color: $dark-gray, $alpha: 0.7);
+    height: 91.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-gray;
+    color: $white;
+    padding: 60px 70px 80px 70px;
+    .form-header {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.form-body {
+  .input-div {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-size: 25px;
+    label {
+      margin-bottom: 10px;
+    }
+    input {
+      font-size: 25px;
+      color: $white;
+      background-color: $light-gray;
+      border: none;
+      height: 50px;
+      outline: none;
+      padding: 10px 15px;
+      transition: 0.2s ease-in;
+      &:hover {
+        border-bottom: solid 4px $yellow;
+      }
+      &:focus {
+        border-bottom: solid 4px $yellow;
+      }
+    }
+    .form-button {
+      border: 1px solid white;
+      padding: 15px 0 5px 0px;
+      font-size: 20px;
+      color: white;
+      height: 55px;
+      margin-top: 25px;
+      cursor: pointer;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      gap: 5px;
+      background: $dark-gray;
+      transition: 0.3s ease-in;
+      &:hover {
+        border: none;
+        background: $yellow;
+        color: $dark-gray;
+      }
+    }
+  }
+  .link {
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: $light-yellow;
+    }
+  }
+}
