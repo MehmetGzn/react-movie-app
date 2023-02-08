@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../Auth/firebase';
+import PaswordInput from '../components/PaswordInput';
 
 const Register = () => {
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const displayName = `${name} ${surname}`;
+
   const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
-    createUser(email, password, navigate);
-    console.log(name, surname, email, password);
+    createUser(email, password, displayName, navigate);
   };
 
   return (
@@ -54,13 +56,7 @@ const Register = () => {
               </div>
               <div className="input-div">
                 <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Enter your password..."
-                  required
-                  onChange={e => setPassword(e.target.value)}
-                />
+                <PaswordInput password={password} setPassword={setPassword} />
               </div>
               <div className="input-div">
                 <input

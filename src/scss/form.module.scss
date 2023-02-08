@@ -36,6 +36,7 @@
     flex-direction: column;
     margin-bottom: 15px;
     font-size: 25px;
+    position: relative;
     label {
       margin-bottom: 10px;
     }
@@ -48,12 +49,18 @@
       outline: none;
       padding: 10px 15px;
       transition: 0.2s ease-in;
+      width: 100%;
       &:hover {
         border-bottom: solid 4px $yellow;
       }
       &:focus {
         border-bottom: solid 4px $yellow;
       }
+    }
+    #span {
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
     }
   }
   .form-button {

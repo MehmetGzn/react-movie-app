@@ -1,10 +1,11 @@
+import AuthContextProvider from './context/AuthContextProvider';
 import AppRoutter from './Router/AppRoutter';
 
 function App() {
   return (
-    <div className="App">
+    <AuthContextProvider className="App">
       <AppRoutter />
-    </div>
+    </AuthContextProvider>
   );
 }
 
