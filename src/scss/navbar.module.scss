@@ -12,7 +12,7 @@
   width: 100%;
   .logo-div {
     background-color: $dark-yellow;
-    width: 190px;
+    width: 200px;
     height: 70px;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@
     .logo-part1 {
       position: absolute;
       top: 20px;
-      left: 8px;
+      left: 9px;
       font-family: 'Luckiest Guy', cursive;
       font-size: 45px;
       color: $black;
@@ -31,7 +31,7 @@
       position: absolute;
       color: $white;
       top: 20px;
-      right: 8px;
+      right: 9px;
       font-family: 'Luckiest Guy', cursive;
       font-size: 45px;
       transition: 0.3s ease-in;

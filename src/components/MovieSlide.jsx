@@ -56,6 +56,7 @@ const MovieSlide = (movies, slider) => {
             </div>
           </div>
           <h3>{currentMovie?.overview}</h3>
+          <button className="view-button">View More</button>
         </div>
       </div>
       <div className="slide-over-top"></div>

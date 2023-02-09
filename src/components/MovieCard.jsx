@@ -4,7 +4,7 @@ const IMG_API = 'https://image.tmdb.org/t/p/w1280';
 const defaultImage =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
-const MovieCard = (movie, slider) => {
+const MovieCard = movie => {
   return (
     <div>
       <div className="movie-card">
