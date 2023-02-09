@@ -1,6 +1,18 @@
-@import './reset', './variables', './navbar.module.scss', './form.module.scss';
+@import './reset', './variables', './navbar.module.scss', './form.module.scss',
+  './movieSlide.module.scss', './movies.module.scss';
 
 * {
   font-family: 'Dosis', sans-serif;
   letter-spacing: 0.5px;
+  color: $white;
+}
+
+body {
+  background-color: $dark-gray;
+}
+
+.home {
+  margin-top: 90px;
+  margin-bottom: 30px;
+  width: 100%;
 }
