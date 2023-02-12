@@ -1,0 +1,113 @@
+.movie-details {
+  margin-top: 90px;
+  position: relative;
+}
+.img-div {
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  .shadow-div {
+    width: 100%;
+    height: 30%;
+    background-image: linear-gradient($black, rgba(0, 0, 0, 0));
+  }
+}
+.over-img {
+  margin-top: 1vh;
+  position: absolute;
+  .back-top {
+    width: 100vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), $dark-gray);
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    gap: 5%;
+    padding: 8%;
+    .movie-img {
+      width: 450px;
+      margin-bottom: -25vh;
+    }
+    .movie-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h1 {
+        font-size: 55px;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      .genres {
+        display: flex;
+        gap: 20px;
+        .genre {
+          color: $black;
+          background-color: $yellow;
+          padding: 10px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .casts-div {
+    margin-bottom: -25vh;
+    h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .cast-div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .casts {
+      display: flex;
+      flex-direction: column;
+      width: 145px;
+      .cast-img {
+        width: 145px;
+      }
+      .cast-title {
+        text-align: center;
+        font-size: 15px;
+        padding: 5px;
+        background-color: $gray;
+      }
+    }
+  }
+
+  .back-bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20vh;
+    background-color: $dark-gray;
+    padding-bottom: 3vh;
+    .video-section {
+      width: 100vw;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      h1 {
+        width: 80%;
+        padding-bottom: 15px;
+        border-bottom: solid $yellow;
+      }
+      .video-box {
+        width: 80%;
+        .video {
+          width: 100%;
+          border: none;
+        }
+      }
+    }
+  }
+}

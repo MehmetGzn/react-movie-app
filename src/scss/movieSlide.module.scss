@@ -7,12 +7,9 @@
   height: 90vh;
   position: relative;
   img {
-    margin-top: -10vh;
     position: absolute;
-    min-height: 100vh;
     width: 100%;
     z-index: -1;
-    transition: 0.4s ease-in-out;
   }
   .slide-icons {
     position: absolute;
@@ -47,24 +44,9 @@
     justify-content: center;
     gap: 20px;
     h1 {
-      font-size: 45px;
+      font-size: 55px;
     }
-    .vote {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      .percentage-bar {
-        background-color: $light-gray;
-        height: 10px;
-        width: 30%;
-        position: relative;
-        .fill {
-          position: absolute;
-          background-color: $yellow;
-          height: 10px;
-        }
-      }
-    }
+
     .view-button {
       font-size: 20px;
       width: 20%;

@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import Icon from 'react-icons-kit';
 import { arrow_left } from 'react-icons-kit/ikons/arrow_left';
 import { arrow_right } from 'react-icons-kit/ikons/arrow_right';
+import { useNavigate } from 'react-router-dom';
 
 const IMG_API = 'https://image.tmdb.org/t/p/original';
 const defaultImage =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
-const MovieSlide = (movies, slider) => {
+const MovieSlide = movies => {
+  const navigate = useNavigate();
+
   const [index, setIndex] = useState(0);
 
   const slideIndexInc = () => {
@@ -24,9 +27,11 @@ const MovieSlide = (movies, slider) => {
       setIndex(2);
     }
   };
+
   const movieArray = movies.movies;
   const currentMovie = movieArray[index];
   const genres = movieArray.genres;
+
   console.log(genres);
   console.log(currentMovie);
   return (
@@ -56,12 +61,17 @@ const MovieSlide = (movies, slider) => {
             </div>
           </div>
           <h3>{currentMovie?.overview}</h3>
-          <button className="view-button">View More</button>
+          <button
+            className="view-button"
+            onClick={() => navigate('details/' + currentMovie?.id)}
+          >
+            View More
+          </button>
         </div>
       </div>
       <div className="slide-over-top"></div>
       <img
-        src={currentMovie ? IMG_API + currentMovie.poster_path : undefined}
+        src={currentMovie ? IMG_API + currentMovie.backdrop_path : undefined}
         alt=""
       />
     </div>

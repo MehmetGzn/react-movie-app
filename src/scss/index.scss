@@ -1,5 +1,6 @@
 @import './reset', './variables', './navbar.module.scss', './form.module.scss',
-  './movieSlide.module.scss', './movies.module.scss';
+  './movieSlide.module.scss', './movies.module.scss',
+  './movieDetails.module.scss';
 
 * {
   font-family: 'Dosis', sans-serif;
@@ -15,4 +16,21 @@ body {
   margin-top: 90px;
   margin-bottom: 30px;
   width: 100%;
+}
+
+.vote {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  .percentage-bar {
+    background-color: $light-gray;
+    height: 10px;
+    width: 40%;
+    position: relative;
+    .fill {
+      position: absolute;
+      background-color: $yellow;
+      height: 10px;
+    }
+  }
 }
