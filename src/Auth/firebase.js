@@ -15,12 +15,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyAnTMtav_y0MGrfe42el_Q2X9tlzIwC5MY',
-  authDomain: 'react-moview-app.firebaseapp.com',
-  projectId: 'react-moview-app',
-  storageBucket: 'react-moview-app.appspot.com',
-  messagingSenderId: '729947516336',
-  appId: '1:729947516336:web:fb457049a4b778bfc6fa75',
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
