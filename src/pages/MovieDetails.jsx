@@ -20,10 +20,10 @@ const MovieDetails = () => {
   } = movieDetails;
 
   const { id } = useParams();
-  const apiKey = '6e6ffd4226cfa0b0d88c73bfdb8ed5c7';
-  const movieDetailBaseURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
-  const movieCreditsBaseURL = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}`;
-  const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`;
+  const API_KEY = process.env.REACT_APP_TMDB_KEY;
+  const movieDetailBaseURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
+  const movieCreditsBaseURL = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
+  const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
   const movieImageUrl = `https://image.tmdb.org/t/p/original`;
   const defaultImage =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
@@ -75,11 +75,13 @@ const MovieDetails = () => {
           </div>
           <div className="over-img">
             <div className="back-top">
-              <img
-                className="movie-img"
-                src={poster_path ? movieImageUrl + poster_path : defaultImage}
-                alt=""
-              />
+              <div className="movie-img-div">
+                <img
+                  className="movie-img"
+                  src={poster_path ? movieImageUrl + poster_path : defaultImage}
+                  alt="..."
+                />
+              </div>
               <div className="movie-info">
                 <h1>{title}</h1>
                 <div className="vote">

@@ -7,10 +7,10 @@ import Icon from 'react-icons-kit';
 import { magnifying_glass } from 'react-icons-kit/ikons/magnifying_glass';
 import MovieSlide from '../components/MovieSlide';
 
-const apiKey = '6e6ffd4226cfa0b0d88c73bfdb8ed5c7';
-const POPULAR_API = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
-const TOP_API = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
-const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=`;
+const API_KEY = process.env.REACT_APP_TMDB_KEY;
+const POPULAR_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+const TOP_API = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
