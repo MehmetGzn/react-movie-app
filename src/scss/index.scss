@@ -34,3 +34,18 @@ body {
     }
   }
 }
+
+.loading-div {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  img {
+    width: 50px;
+  }
+}
