@@ -14,13 +14,11 @@ const MovieDetails = () => {
     backdrop_path,
     release_date,
     vote_average,
-    vote_count,
     overview,
     genres,
   } = movieDetails;
 
   const { id } = useParams();
-  console.log(id, title);
   const apiKey = '6e6ffd4226cfa0b0d88c73bfdb8ed5c7';
   const movieDetailBaseURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
   const movieCreditsBaseURL = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}`;
@@ -28,6 +26,9 @@ const MovieDetails = () => {
   const movieImageUrl = `https://image.tmdb.org/t/p/original`;
   const defaultImage =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+  const defaultCastImage = 'https://openclipart.org/image/2000px/307452';
+  const defaultPoster =
+    'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2912&q=80';
 
   useEffect(() => {
     axios
@@ -52,14 +53,20 @@ const MovieDetails = () => {
       <div
         className="img-div"
         style={{
-          backgroundImage: `url(${movieImageUrl + backdrop_path})`,
+          backgroundImage: `url(${
+            backdrop_path ? movieImageUrl + backdrop_path : defaultPoster
+          })`,
         }}
       >
         <div className="shadow-div"></div>
       </div>
       <div className="over-img">
         <div className="back-top">
-          <img className="movie-img" src={movieImageUrl + poster_path} alt="" />
+          <img
+            className="movie-img"
+            src={poster_path ? movieImageUrl + poster_path : defaultImage}
+            alt=""
+          />
           <div className="movie-info">
             <h1>{title}</h1>
             <div className="vote">
@@ -79,6 +86,11 @@ const MovieDetails = () => {
                   </span>
                 ))}
             </div>
+            <div className="released">
+              <p>
+                <b> Release Date :</b> {release_date}
+              </p>
+            </div>
             <div className="overview">
               <p>{overview}</p>
             </div>
@@ -91,7 +103,7 @@ const MovieDetails = () => {
                       src={
                         cast.profile_path
                           ? movieImageUrl + cast.profile_path
-                          : defaultImage
+                          : defaultCastImage
                       }
                       className="cast-img"
                       alt="..."
@@ -113,10 +125,3 @@ const MovieDetails = () => {
 };
 
 export default MovieDetails;
-
-{
-  /* <div className="over-img">
-  
-  
-</div> */
-}

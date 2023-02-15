@@ -21,7 +21,11 @@ const MovieCard = movie => {
           </div>
           <div className="card-bar"></div>
         </div>
-        <img className="card-img" src={IMG_API + movie.poster_path} alt="..." />
+        <img
+          className="card-img"
+          src={movie.poster_path ? IMG_API + movie.poster_path : defaultImage}
+          alt="..."
+        />
       </div>
     </div>
   );

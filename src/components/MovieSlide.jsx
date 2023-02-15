@@ -5,8 +5,8 @@ import { arrow_right } from 'react-icons-kit/ikons/arrow_right';
 import { useNavigate } from 'react-router-dom';
 
 const IMG_API = 'https://image.tmdb.org/t/p/original';
-const defaultImage =
-  'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+const defaultPoster =
+  'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2912&q=80';
 
 const MovieSlide = movies => {
   const navigate = useNavigate();
@@ -30,10 +30,7 @@ const MovieSlide = movies => {
 
   const movieArray = movies.movies;
   const currentMovie = movieArray[index];
-  const genres = movieArray.genres;
 
-  console.log(genres);
-  console.log(currentMovie);
   return (
     <div className="movie-slide">
       <Icon
@@ -52,7 +49,7 @@ const MovieSlide = movies => {
         <div className="movie-info">
           <h1>{currentMovie?.original_title}</h1>
           <div className="vote">
-            <h1>{currentMovie?.vote_average}</h1>
+            <h1>{currentMovie?.vote_average.toFixed(2)}</h1>
             <div className="percentage-bar">
               <div
                 className="fill"
@@ -71,8 +68,12 @@ const MovieSlide = movies => {
       </div>
       <div className="slide-over-top"></div>
       <img
-        src={currentMovie ? IMG_API + currentMovie.backdrop_path : undefined}
-        alt=""
+        src={
+          currentMovie && currentMovie.backdrop_path
+            ? IMG_API + currentMovie.poster_path
+            : defaultPoster
+        }
+        alt="..."
       />
     </div>
   );

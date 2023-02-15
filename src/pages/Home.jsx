@@ -4,6 +4,7 @@ import MovieCard from '../components/MovieCard';
 import { arrow_left } from 'react-icons-kit/ikons/arrow_left';
 import { arrow_right } from 'react-icons-kit/ikons/arrow_right';
 import Icon from 'react-icons-kit';
+import { magnifying_glass } from 'react-icons-kit/ikons/magnifying_glass';
 import MovieSlide from '../components/MovieSlide';
 
 const apiKey = '6e6ffd4226cfa0b0d88c73bfdb8ed5c7';
@@ -14,10 +15,21 @@ const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [activate, setActivate] = useState('pop');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const slider = (px, id) => {
     var slider = document.getElementById(id);
     slider.scrollLeft = slider.scrollLeft + px;
+  };
+
+  const handleSearch = e => {
+    e.preventDefault();
+    if (searchTerm) {
+      getMovies(SEARCH_API + searchTerm);
+      setSearchTerm('');
+    } else {
+      alert('Please enter a text');
+    }
   };
 
   const handleTopRated = e => {
@@ -31,8 +43,10 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getMovies(POPULAR_API);
-  }, []);
+    if (searchTerm === '') {
+      getMovies(POPULAR_API);
+    }
+  }, [searchTerm]);
 
   const getMovies = API => {
     axios
@@ -47,23 +61,36 @@ const Home = () => {
         <MovieSlide movies={movies.slice(0, 3)} slider={slider} />
       </div>
       <div className="movies">
-        <header>
-          <p
-            className="pop-movies"
-            id={activate === 'pop' ? 'act' : undefined}
-            onClick={handlePopular}
-          >
-            POPULAR MOVIES
-          </p>
-          <p>|</p>
-          <p
-            className="top-movies"
-            onClick={handleTopRated}
-            id={activate === 'top' ? 'act' : undefined}
-          >
-            TOP RATED MOVIES
-          </p>
-        </header>
+        <div className="slide-bar">
+          <header>
+            <p
+              className="pop-movies"
+              id={activate === 'pop' ? 'act' : undefined}
+              onClick={handlePopular}
+            >
+              POPULAR MOVIES
+            </p>
+            <p>|</p>
+            <p
+              className="top-movies"
+              onClick={handleTopRated}
+              id={activate === 'top' ? 'act' : undefined}
+            >
+              TOP RATED MOVIES
+            </p>
+          </header>
+          <div className="search-bar">
+            <form className="search-form" onSubmit={handleSearch}>
+              <input
+                type="search"
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+              <button>
+                <Icon className="search-icon" icon={magnifying_glass} />
+              </button>
+            </form>
+          </div>
+        </div>
         <div className="slider">
           <Icon
             className="arrow-icons"
@@ -72,7 +99,7 @@ const Home = () => {
             onClick={() => slider(-750, 'slide')}
           />
           <div id="slide" className="movie-cards">
-            {movies?.slice(3, 19).map(movie => (
+            {movies?.map(movie => (
               <MovieCard key={movie.id} {...movie} />
             ))}
           </div>
