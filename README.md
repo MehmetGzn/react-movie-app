@@ -20,18 +20,18 @@
 
     Register Page
 
-![registerPage]()
+![registerPage](https://github.com/MehmetGzn/react-movie-app/blob/main/src/Assets/githubPreview/registerPage.png?raw=true)
 
     Login Page
 
-![loginPage]()
+![loginPage](https://github.com/MehmetGzn/react-movie-app/blob/main/src/Assets/githubPreview/loginPage.png?raw=true)
 
     Home Page
 
-![homePage-01]()
-![homePage-02]()
+![homePage-01](https://github.com/MehmetGzn/react-movie-app/blob/main/src/Assets/githubPreview/homePage-01.png?raw=true)
+![homePage-02](https://github.com/MehmetGzn/react-movie-app/blob/main/src/Assets/githubPreview/homePage-02.png?raw=true)
 
     Movie Detail Page
 
-![movieDetailPage-01]()
-![movieDetailPage-02]()
+![movieDetailPage-01](https://github.com/MehmetGzn/react-movie-app/blob/main/src/Assets/githubPreview/movieDetailsPage-01.png?raw=true)
+![movieDetailPage-02](https://github.com/MehmetGzn/react-movie-app/blob/main/src/Assets/githubPreview/movieDetailsPage-02.png?raw=true)
