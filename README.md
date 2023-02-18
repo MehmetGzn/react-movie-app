@@ -15,8 +15,3 @@
 # Likn
 
     https://react-moview-app.vercel.app/
-
-# Preview
-
-    ![Register Page](./src/Assets/githubPreview/registerPage.png)
-    ![Loing Page](./src/Assets/githubPreview/loginPage.png)
